@@ -60,13 +60,13 @@
             bindings = <
             // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
             // │ ESC      │ BACK     │ FIND     │ FORWARD  │ INSERT   │  │ PG UP    │ HOME     │ UP       │ END      │ CAPS     │
-                 &kp ESC    &kp C_AC_BACK &kp C_AC_SEARCH &kp C_AC_FORWARD &kp INS   &kp PG_UP  &kp HOME   &kp UP     &kp END    &kp CAPS
+                 &kp ESC    &kp C_AC_BACK &kp C_AC_SEARCH &kp C_AC_FORWARD &kp INS   &kp PG_UP  &kp HOME   &kp K_APP     &kp END    &kp CAPS
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
             // │ sk ALT   │ sk GUI   │ sk SHIFT │ sk CTRL  │ sk ALTGR │  │ PG DN    │ LEFT     │ DOWN     │ RIGHT    │ DELETE   │
-                 &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &sk RALT      &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp DEL
+                 &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &sk RALT      &kp PG_DN  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
             // │ UNDO     │ CUT      │ COPY     │ PASTE    │ BACKSPACE│  │ ENTER    │ BACKSPACE│ TAB      │ APP/MENU │ PAUSE    │
-                 &kp K_UNDO &kp K_CUT  &kp K_COPY &kp K_PASTE &kp BSPC     &kp RET    &kp BSPC   &kp TAB    &kp K_APP  &kp PAUSE_BREAK
+                 &kp K_UNDO &kp K_CUT  &kp K_COPY &kp LGUI &kp K_PASTE     &kp RET    &kp BSPC   &kp TAB    &kp DEL    &kp PAUSE_BREAK
             // ╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                   &trans     &trans        &trans     &trans
             >;
@@ -75,14 +75,14 @@
         sym_layer {
             bindings = <
             // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            // │          │  [       │  {       │  }       │          │  │  ^       │  (       │  )       │  ]       │  ~       │
-                 &trans     &kp LBKT   &kp LBRC   &kp RBRC   &trans        &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT   &kp TILDE
+            // │  !       │  @       │  #       │  $       │  %       │  │  =       │  `       │  :       │  ;       │  +       │
+                 &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT     &kp EQUAL  &kp GRAVE  &kp COLON  &kp SEMI   &kp PLUS
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            // │ sk ALT   │ sk GUI   │ sk SHIFT │ sk CTRL  │ sk ALTGR │  │  * │  -       │  =       │  \       │  `       │
-                 &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &sk RALT      &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSLH   &kp GRAVE
+            // │ sk ALT   │ sk GUI   │ sk SHIFT │ sk CTRL  │  ^       │  │  * │  (       │  {       │  [       │  -       │
+                 &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &kp CARET     &kp ASTRK  &kp LPAR   &kp LBRC   &kp LBKT   &kp MINUS
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            // │          │          │          │          │          │  │  &       │  _       │  +       │  |       │          │
-                 &trans     &trans     &trans     &trans     &trans        &kp AMPS   &kp UNDER  &kp PLUS   &kp PIPE   &trans
+            // │          │          │  \       │  |       │  &       │  │  ~       │  )       │  }       │  ]       │  _       │
+                 &trans     &trans     &kp BSLH   &kp PIPE   &kp AMPS      &kp TILDE  &kp RPAR   &kp RBRC   &kp RBKT   &kp UNDER
             // ╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                   &trans     &trans        &trans     &trans
             >;
@@ -91,16 +91,17 @@
         fnc_layer {
             bindings = <
             // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            // │ F1       │ F2       │ F3       │ F4       │ F5       │  │ F6       │ F7       │ F8       │ F9       │ F10      │
-                 &kp F1     &kp F2     &kp F3     &kp F4     &kp F5        &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
+            // │ STOP     │ PREV     │ PLAY/PAU │ NEXT     │ BR UP    │  │ F12      │ F7       │ F8       │ F9       │ SCROLL LK│
+                 &kp K_STOP &kp K_PREV &kp K_PP   &kp K_NEXT &kp C_BRI_UP  &kp F12    &kp F7     &kp F8     &kp F9     &kp SLCK
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            // │ sk ALT   │ sk GUI   │ sk SHIFT │ sk CTRL  │ sk ALTGR │  │ F11      │ F12      │ UNLOCK   │ BOOTLDR  │ RESET    │
-                 &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &sk RALT      &kp F11    &kp F12    &studio_unlock &bootloader &sys_reset
+            // │ UNDO     │ CUT      │ COPY     │ PASTE    │ BR DN    │  │ F11      │ F4       │ F5       │ F6       │ To BASE  │
+                 &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &kp C_BRI_DN   &kp F11    &kp F4     &kp F5     &kp F6     &to BASE
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            // │ BT 0     │ BT 1     │ BT 2     │ BT CLEAR │          │  │          │          │          │          │          │
-                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR &trans  &trans     &trans     &trans     &trans     &trans
+            // │ MUTE     │ VOL DN   │ LC(T)    │ VOL UP   │ LC(V)    │  │ F10      │ F1       │ F2       │ F3       │ Placeholder|
+                 &kp K_MUTE &kp K_VOL_DN &kp LS(LC(C)) &kp K_VOL_UP &kp LS(LC(V)) &kp F10    &kp F1     &kp F2     &kp F3      &trans
             // ╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                  &trans     &trans        &trans     &trans
+            //                                  │ trans    │ BOOTLDR  │  │ RET-cross│ trans    │
+                                                  &trans     &bootloader   &kp RET    &trans
             >;
         };
 
@@ -114,7 +115,7 @@
                  &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &sk RALT      &kp ASTRK  &kp N4     &kp N5     &kp N6     &kp MINUS
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
             // │          │          │          │          │          │  │  0       │  1       │  2       │  3       │  /       │
-                 &trans     &trans     &trans     &trans     &trans        &kp N0     &kp N1     &kp N2     &kp N3     &kp FSLH
+                 &trans     &trans     &kp TAB    &kp BSPC   &trans        &kp N0     &kp N1     &kp N2     &kp N3     &kp FSLH
             // ╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                   &trans     &trans        &trans     &trans
             >;
