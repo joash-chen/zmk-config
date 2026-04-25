@@ -1,0 +1,157 @@
+/ {
+    macros {
+        ms_efore: ms_efore {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E &kp F &kp O &kp R &kp E>;
+        };
+    };
+
+    behaviors {
+        magic: magic {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+
+            /*
+             * Default behavior if no trigger matches.
+             * Use &none so accidental magic presses do nothing.
+             */
+            bindings = <&none>;
+
+            /*
+             * Magic Sturdy mappings.
+             *
+             * Source model:
+             * previous key + ★ = mapped output
+             *
+             * zmk-adaptive-key checks trigger-keys against the previous keycode,
+             * then emits the bindings for the first matching trigger.
+             */
+
+            ms_a {
+                trigger-keys = <A>;
+                bindings = <&kp O>;
+            };
+
+            ms_b {
+                trigger-keys = <B>;
+                bindings = <&ms_efore>;
+            };
+
+            ms_c_d_g_p {
+                trigger-keys = <C D G P>;
+                bindings = <&kp Y>;
+            };
+
+            ms_e {
+                trigger-keys = <E>;
+                bindings = <&kp U>;
+            };
+
+            ms_i {
+                trigger-keys = <I>;
+                bindings = <&kp O &kp N>;
+            };
+
+            ms_j {
+                trigger-keys = <J>;
+                bindings = <&kp U &kp S &kp T>;
+            };
+
+            ms_k {
+                trigger-keys = <K>;
+                bindings = <&kp S>;
+            };
+
+            ms_l {
+                trigger-keys = <L>;
+                bindings = <&kp K>;
+            };
+
+            ms_m {
+                trigger-keys = <M>;
+                bindings = <&kp E &kp N &kp T>;
+            };
+
+            ms_n {
+                trigger-keys = <N>;
+                bindings = <&kp I &kp O &kp N>;
+            };
+
+            ms_o {
+                trigger-keys = <O>;
+                bindings = <&kp A>;
+            };
+
+            ms_r {
+                trigger-keys = <R>;
+                bindings = <&kp L>;
+            };
+
+            ms_s {
+                trigger-keys = <S>;
+                bindings = <&kp K>;
+            };
+
+            ms_t {
+                trigger-keys = <T>;
+                bindings = <&kp M &kp E &kp N &kp T>;
+            };
+
+            ms_u {
+                trigger-keys = <U>;
+                bindings = <&kp E>;
+            };
+
+            ms_v {
+                trigger-keys = <V>;
+                bindings = <&kp E &kp R>;
+            };
+
+            ms_w {
+                trigger-keys = <W>;
+                bindings = <&kp H &kp I &kp C &kp H>;
+            };
+
+            ms_x {
+                trigger-keys = <X>;
+                bindings = <&kp E &kp S>;
+            };
+
+            ms_y {
+                trigger-keys = <Y>;
+                bindings = <&kp P>;
+            };
+
+            ms_comma {
+                trigger-keys = <COMMA>;
+                bindings = <&kp SPACE &kp B &kp U &kp T>;
+            };
+
+            ms_dot {
+                trigger-keys = <DOT>;
+                bindings = <&kp BSLH>;
+            };
+
+            ms_minus_equal {
+                trigger-keys = <MINUS EQUAL>;
+                bindings = <&kp LS(DOT)>;
+            };
+
+            ms_space {
+                trigger-keys = <SPACE>;
+                bindings = <&kp T &kp H &kp E>;
+            };
+
+            ms_tab {
+                trigger-keys = <TAB>;
+                bindings = <&kp T &kp H &kp E>;
+            };
+
+            ms_enter {
+                trigger-keys = <ENTER>;
+                bindings = <&kp T &kp H &kp E>;
+            };
+        };
+    };
+};
