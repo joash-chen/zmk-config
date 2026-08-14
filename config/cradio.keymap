@@ -92,8 +92,8 @@
                 &kp V          &kp M          &kp L           &kp C          &kp P
                 &kp B          &magic         &kp U           &kp O          &kp Q
 
-                &hml LGUI S    &hml LALT T    &hml LCTRL R    &hml LSHFT D   &kp Y
-                &kp F          &hmr RSHFT N   &hmr RCTRL E    &hmr RALT A    &hmr RGUI I
+                &hml LALT S    &hml LGUI T    &hml LSHIFT R    &hml LCTRL D   &kp Y
+                &kp F          &hmr RCTRL N   &hmr RSHIFT E    &hmr RGUI A    &hmr RALT I
 
                 &kp X          &kp K          &kp J           &kp G          &kp W
                 &kp Z          &kp H          &kp COMMA       &kp DOT        &kp SEMI
