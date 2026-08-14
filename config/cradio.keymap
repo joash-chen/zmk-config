@@ -144,8 +144,8 @@
             // │ ALT      │ GUI      │ SHIFT    │ CTRL     │ BR DN    │  │ F11      │ F4       │ F5       │ F6       │ To BASE  │
                  &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &kp C_BRI_DN   &kp F11    &kp F4     &kp F5     &kp F6     &to BASE
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            // │ MUTE     │ VOL DN   │ LC(T)    │ VOL UP   │ LC(V)    │  │ F10      │ F1       │ F2       │ F3       │ Placeholder|
-                 &kp K_MUTE &kp K_VOL_DN &kp LS(LC(C)) &kp K_VOL_UP &kp LS(LC(V)) &kp F10    &kp F1     &kp F2     &kp F3      &trans
+            // │ MUTE     │ VOL DN   │ LC(T)    │ VOL UP   │ LC(V)    │  │ F10      │ F1       │ F2       │ F3       │ BT_CLR   |
+                 &kp K_MUTE &kp K_VOL_DN &kp LS(LC(C)) &kp K_VOL_UP &kp LS(LC(V)) &kp F10    &kp F1     &kp F2     &kp F3      &bt BT_CLR
             // ╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
             //                                  │ trans    │ BOOTLDR  │  │ RET-cross│ trans    │
                                                   &trans     &bootloader   &kp RET    &trans
