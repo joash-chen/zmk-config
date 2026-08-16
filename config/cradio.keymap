@@ -62,7 +62,6 @@
         };
     };
 
-
     combos {
         compatible = "zmk,combos";
         
@@ -92,8 +91,8 @@
                 &kp V          &kp M          &kp L           &kp C          &kp P
                 &kp B          &magic         &kp U           &kp O          &kp Q
 
-                &hml LALT S    &hml LGUI T    &hml LSHIFT R    &hml LCTRL D   &kp Y
-                &kp F          &hmr RCTRL N   &hmr RSHIFT E    &hmr RGUI A    &hmr RALT I
+                &hml LALT S    &hml LGUI T    &hml LSHIFT R   &hml LCTRL D   &kp Y
+                &kp F          &hmr RCTRL N   &hmr RSHIFT E   &hmr RGUI A    &hmr RALT I
 
                 &kp X          &kp K          &kp J           &kp G          &kp W
                 &kp Z          &kp H          &kp COMMA       &kp DOT        &kp SEMI
@@ -115,23 +114,23 @@
             // │ UNDO     │ CUT      │ COPY     │ GUI      │ PASTE    │  │ ENTER    │ BACKSPACE│ TAB      │ DEL      │ PAUSE    │
                  &kp K_UNDO &kp K_CUT  &kp K_COPY &kp LGUI &kp K_PASTE     &kp RET    &kp BSPC   &kp TAB    &kp DEL    &kp PAUSE_BREAK
             // ╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                  &trans     &trans        &kp RET     &trans
+                                                 &trans     &trans        &kp RET     &trans
             >;
         };
 
         sym_layer {
             bindings = <
             // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            // │  !       │  @       │  #       │  $       │  %       │  │  =       │  `       │  :       │  ;       │  +       │
-                 &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT     &kp EQUAL  &kp GRAVE  &kp COLON  &kp SEMI   &kp PLUS
+            // │  !       │  @       │  #       │  $       │  %       │  │  =       │  :       │  '       │  "       │  +       │
+                 &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT     &kp EQUAL  &kp COLON  &kp SQT    &kp DQT    &kp PLUS
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            // │ sk ALT   │ sk GUI   │ sk SHIFT │ sk CTRL  │  ^       │  │  * │  (       │  {       │  [       │  -       │
+            // │ sk ALT   │ sk GUI   │ sk SHIFT │ sk CTRL  │  ^       │  │  *       │  (       │  {       │  [       │  -       │
                  &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &kp CARET     &kp ASTRK  &kp LPAR   &kp LBRC   &kp LBKT   &kp MINUS
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            // │ "        │  '       │  \       │  |       │  &       │  │  ~       │  )       │  }       │  ]       │  _       │
-                 &kp DQT     &kp SQT     &kp BSLH   &kp PIPE   &kp AMPS      &kp TILDE  &kp RPAR   &kp RBRC   &kp RBKT   &kp UNDER
+            // │ &        │  `       │  \       │  |       │  /       │  │  ~       │  )       │  }       │  ]       │  ?       │
+                 &kp AMPS   &kp GRAVE  &kp BSLH   &kp PIPE   &kp FSLH      &kp TILDE  &kp RPAR   &kp RBRC   &kp RBKT   &kp QMARK
             // ╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                  &trans     &trans        &trans     &trans
+                                                 &trans     &trans        &trans     &trans
             >;
         };
 
@@ -142,29 +141,28 @@
                  &kp K_STOP &kp K_PREV &kp K_PP   &kp K_NEXT &kp C_BRI_UP  &kp F12    &kp F7     &kp F8     &kp F9     &kp SLCK
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
             // │ ALT      │ GUI      │ SHIFT    │ CTRL     │ BR DN    │  │ F11      │ F4       │ F5       │ F6       │ To BASE  │
-                 &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &kp C_BRI_DN   &kp F11    &kp F4     &kp F5     &kp F6     &to BASE
+                 &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &kp C_BRI_DN  &kp F11    &kp F4     &kp F5     &kp F6     &to BASE
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            // │ MUTE     │ VOL DN   │ LC(T)    │ VOL UP   │ LC(V)    │  │ F10      │ F1       │ F2       │ F3       │ BT_CLR   |
+            // │ MUTE     │ VOL DN   │ C+S+C    │ VOL UP   │ C+S+V    │  │ F10      │ F1       │ F2       │ F3       │ BT_CLR   |
                  &kp K_MUTE &kp K_VOL_DN &kp LS(LC(C)) &kp K_VOL_UP &kp LS(LC(V)) &kp F10    &kp F1     &kp F2     &kp F3      &bt BT_CLR
             // ╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-            //                                  │ trans    │ BOOTLDR  │  │ RET-cross│ trans    │
-                                                  &trans     &bootloader   &kp RET    &trans
+                                                 &trans     &bootloader   &kp RET    &trans
             >;
         };
 
         num_layer {
             bindings = <
             // ╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-            // │          │          │          │          │          │  │  =       │  7       │  8       │  9       │  +       │
-                 &trans     &trans     &trans     &trans     &trans        &kp EQUAL  &kp N7     &kp N8     &kp N9     &kp PLUS
+            // │          │          │          │  .       │          │  │  =       │  7       │  8       │  9       │  +       │
+                 &trans     &trans     &trans     &kp DOT    &trans        &kp EQUAL  &kp N7     &kp N8     &kp N9     &kp PLUS
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            // │ sk ALT   │ sk GUI   │ sk SHIFT │ sk CTRL  │ sk ALTGR │  │  * │  4       │  5       │  6       │  -       │
+            // │ sk ALT   │ sk GUI   │ sk SHIFT │ sk CTRL  │ sk ALTGR │  │  *       │  4       │  5       │  6       │  -       │
                  &sk LALT   &sk LGUI   &sk LSHFT  &sk LCTRL  &sk RALT      &kp ASTRK  &kp N4     &kp N5     &kp N6     &kp MINUS
             // ├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤
-            // │          │          │          │          │          │  │  0       │  1       │  2       │  3       │  /       │
+            // │          │          │ TAB      │ BSPC     │          │  │  0       │  1       │  2       │  3       │  /       │
                  &trans     &trans     &kp TAB    &kp BSPC   &trans        &kp N0     &kp N1     &kp N2     &kp N3     &kp FSLH
             // ╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                  &trans     &trans        &trans     &trans
+                                                 &trans     &trans        &trans     &trans
             >;
         };
     };
